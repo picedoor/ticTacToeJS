@@ -13,9 +13,9 @@ function game_start() {
 function check_fnish() {
 	var won = 0;
 	for(var i = 0; i < 9; i += 3) {
-		If(board[i] == board[ i + 1] == board[i + 2 ] != 0) won = board[i];
+		if((board[i] == board[ i + 1])&&(board[ i + 1] == board[i + 2 ])&&board[ i + 1] != 0) won = board[i];
 	}
-	if((board[0] == board[4] == board[8] != 0)||(board[2] == board[4] == board[6] != 0)) won = board[4];
+	if(((board[0] == board[4])&&(board[4] == board[8])&&board[4] != 0)||((board[2] == board[4])&&(board[4] == board[6])&&board[4] != 0)) won = board[4];
 	if(won != 0) {
 		alert(won + "님이 이겼읍니다 *^^*");
 		isStarted = false;
