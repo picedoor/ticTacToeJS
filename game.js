@@ -5,7 +5,7 @@ for(var i = 0; i < 9; i++) board[i] = 0;
 //1 : 빨간색 2 : 파란색
 
 function game_start() {
-	alert("게임이 시작되었습니다!");
+	//alert("게임이 시작되었습니다!");
 	isStarted = true;
 	now = 1;
 }
@@ -26,9 +26,9 @@ function game_onclick(n) {
 	if (board[n] == 0 && isStarted) { 
 		board[n] = now;
 		setOwner(n, now);
-		n++;
-		if(n>2) n = 1;
-		alert("버튼 " + n + "이 눌렸습니다!");
+		now++;
+		if(now == 3) now = 1;
+		//alert("버튼 " + n + "이 눌렸습니다!");
 		check_finish();
 		setTurn(now);
 	}
