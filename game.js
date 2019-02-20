@@ -10,7 +10,7 @@ function game_start() {
 	now = 1;
 }
 
-function check_fnish() {
+function check_finish() {
 	var won = 0;
 	for(var i = 0; i < 9; i += 3) {
 		if((board[i] == board[ i + 1])&&(board[ i + 1] == board[i + 2 ])&&board[ i + 1] != 0) won = board[i];
