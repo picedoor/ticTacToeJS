@@ -7,13 +7,17 @@ for(var i = 0; i < 9; i++) board[i] = 0;
 function game_start() {
 	//alert("게임이 시작되었습니다!");
 	isStarted = true;
-	now = 1;
+	setTurn(now = 1);
+	for(var i = 0; i < 9; i++) board[i] = 0;
 }
 
 function check_finish() {
 	var won = 0;
 	for(var i = 0; i < 9; i += 3) {
 		if((board[i] == board[ i + 1])&&(board[ i + 1] == board[i + 2 ])&&board[ i + 1] != 0) won = board[i];
+	}
+	for(var i = 0; i < 3; i ++) {
+		if((board[i] == board[ i + 3])&&(board[ i + 3] == board[i + 6])&&board[ i + 3] != 0) won = board[i];
 	}
 	if(((board[0] == board[4])&&(board[4] == board[8])&&board[4] != 0)||((board[2] == board[4])&&(board[4] == board[6])&&board[4] != 0)) won = board[4];
 	if(won != 0) {
