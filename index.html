@@ -45,8 +45,14 @@ td
 {
 	width: 25vmin;
 	height: 25vmin;
-	border-spacing: 0.5vmin;
+	border-spacing: 2.5vmin;
 	background: #BBFFBB;
+	vertical-align: middle;
+	margin: 0px;
+	padding: 0px;
+	font-size: 18vmin;
+	text-align: center;
+	transition: background 1s;
 }
 
 td.occ
@@ -57,7 +63,7 @@ td.occ
 	font-weight: 900;
 }
 
-td.occ.p1
+td.occ.p1, .p1 td:hover
 {
 	background: #FFBBBB;
 }
@@ -67,7 +73,7 @@ td.occ.p1::after
 	content: "X";
 }
 
-td.occ.p2
+td.occ.p2, .p2 td:hover
 {
 	background: #BBBBFF;
 }
@@ -75,6 +81,16 @@ td.occ.p2
 td.occ.p2::after
 {
 	content: "O";
+}
+
+td.occ.p1:hover
+{
+	background: #BB8888;
+}
+
+td.occ.p2:hover
+{
+	background: #8888BB;
 }
   </style>
   <script src="game.js"></script>
@@ -103,13 +119,11 @@ function setTurn(p) // 1: 빨간색, 2: 파란색
 {
 	if(p === 1)
 	{
-		container.classList.add("occ");
 		container.classList.add("p1");
 		container.classList.remove("p2");
 	}
 	else if(p === 2)
 	{
-		container.classList.add("occ");
 		container.classList.remove("p1");
 		container.classList.add("p2");
 	}
