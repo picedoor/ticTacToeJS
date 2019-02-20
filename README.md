@@ -50,8 +50,8 @@ if( cond) {
 
 ## Authors
 
-- 맹주영 - _GUI_ - [mjy9088](https://github.com/mjy9088)
-- [picedoor](https://github.com/picedoor) - _나머지 전부_
+- 맹주영 - _껍데기_ - [mjy9088](https://github.com/mjy9088)
+- 어구리 - _알맹이_ - [picedoor](https://github.com/picedoor)
 
 
 
