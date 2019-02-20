@@ -16,17 +16,21 @@ function check_fnish() {
 		If(board[i] == board[ i + 1] == board[i + 2 ] != 0) won = board[i];
 	}
 	if((board[0] == board[4] == board[8] != 0)||(board[2] == board[4] == board[6] != 0)) won = board[4];
-	if(won != 0) alert(won + "님이 이겼읍니다 *^^*");
+	if(won != 0) {
+		alert(won + "님이 이겼읍니다 *^^*");
+		isStarted = false;
+	}
 }
 
 function game_onclick(n) {
-	if (board[n] == 0) { 
+	if (board[n] == 0 && isStarted) { 
 		board[n] = now;
 		setOwner(n, now);
 		n++;
 		if(n>2) n = 1;
 		alert("버튼 " + n + "이 눌렸습니다!");
 		check_finish();
+		setTurn(now);
 	}
 	else alert("이미 뭔가가 있는 타일!");
 }
