@@ -27,14 +27,17 @@ function check_finish() {
 }
 
 function game_onclick(n) {
-	if (board[n] == 0 && isStarted) { 
-		board[n] = now;
-		setOwner(n, now);
-		now++;
-		if(now == 3) now = 1;
-		//alert("버튼 " + n + "이 눌렸습니다!");
-		check_finish();
-		setTurn(now);
+	if (board[n] == 0) {
+		if(isStarted) { 
+			board[n] = now;
+			setOwner(n, now);
+			now++;
+			if(now == 3) now = 1;
+			//alert("버튼 " + n + "이 눌렸습니다!");
+			check_finish();
+			setTurn(now);
+		}
+		else alert("끝났다 요녀석아!");
 	}
 	else alert("이미 뭔가가 있는 타일!");
 }
